@@ -49,43 +49,34 @@ while True:
                 name = input("상품명: ").strip()
                 price = int(input("가격: ").strip())
                 stock = int(input("초기 재고: ").strip())
-                try:
-                    svc.admin_add(code, name, price, stock)
-                    print("✔ 상품 추가 완료.")
-                except Exception as e:
-                    print(f" 오류: {e}")
+
+                svc.admin_add(code, name, price, stock)
+                print("상품 추가 완료.")
 
             elif choice == 'b':
                 code = input("삭제할 상품 코드: ").strip().upper()
-                try:
-                    svc.admin_remove(code)
-                    print("✔ 상품 삭제 완료.")
-                except Exception as e:
-                    print(f" 오류: {e}")
+
+                svc.admin_remove(code)
+                print("상품 삭제 완료.")
 
             elif choice == 'c':
                 code = input("수정할 상품 코드: ").strip().upper()
                 price = int(input("새 가격: ").strip())
-                try:
-                    svc.admin_update_price(code, price)
-                    print("✔ 가격 수정 완료.")
-                except Exception as e:
-                    print(f" 오류: {e}")
+                svc.admin_update_price(code, price)
+                print("가격 수정 완료.")
 
             elif choice == 'd':
                 code = input("재고 보충할 상품 코드: ").strip().upper()
                 qty = int(input("보충 수량: ").strip())
-                try:
-                    svc.admin_restock(code, qty)
-                    print("✔ 재고 보충 완료.")
-                except Exception as e:
-                    print(f" 오류: {e}")
+                svc.admin_restock(code, qty)
+                print("재고 보충 완료.")
+
 
             elif choice == 'q':
                 break
 
             else:
-                print(" 유효하지 않은 명령입니다.")
+                print("유효하지 않습니다.")
 
     elif cmd == 'q':
         break

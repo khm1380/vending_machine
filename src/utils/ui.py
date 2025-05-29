@@ -20,7 +20,7 @@ def print_menu(menu, balance, payment_method=""):
 
 def prompt_command():
     options = ["1)결제수단선택", "2)투입", "3)상품구매", "4)잔돈반환", "5)관리자모드", "q)종료"]
-    print("선택해주세요 : ", *options)
+    print("선택 : ", *options)
 
     return input("> ").strip().lower()
 
